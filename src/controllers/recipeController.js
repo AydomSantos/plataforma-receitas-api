@@ -4,7 +4,7 @@ const Recipe = require('../models/Recipe');
 exports.createRecipe = async (req, res) => {
  try{
     const recipe = new Recipe({
-        author: req.user._id, 
+        author: req.user._id,
         title: req.body.title,
         tempo: req.body.tempo,
         servings: req.body.servings,
@@ -55,3 +55,4 @@ exports.approveRecipe = async (req, res) => {
         res.status(500).json({ message: 'Internal server error' });
     }
 }
+

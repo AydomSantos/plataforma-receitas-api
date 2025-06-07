@@ -1,0 +1,79 @@
+# Plataforma Receitas API
+
+Esta é uma API para uma plataforma de receitas, onde usuários podem criar contas, adicionar receitas e visualizar receitas aprovadas. Todas as receitas enviadas passam por uma aprovação do administrador antes de ficarem públicas.
+
+## Funcionalidades
+
+- Cadastro e login de usuários (usuário comum e admin)
+- Criação de receitas por usuários autenticados
+- Listagem de receitas aprovadas para todos os usuários
+- Painel de administração para aprovação de receitas pendentes
+- Listagem de todos os usuários (admin)
+- Edição de perfil e troca de senha
+
+## Tecnologias Utilizadas
+
+- Node.js
+- Express
+- MongoDB (Mongoose)
+- JWT para autenticação
+- bcrypt para hash de senhas
+- dotenv para variáveis de ambiente
+- express-validator para validação de dados
+
+## Estrutura do Projeto
+
+```
+src/
+│
+├── controllers/
+│   ├── userController.js
+│   ├── recipeController.js
+│   ├── adminController.js
+│   └── profileController.js
+│
+├── models/
+│   ├── User.js
+│   └── Recipe.js
+│
+├── routes/
+│   └── routes.js
+│
+├── app.js
+├── server.js
+└── .env
+```
+
+## Como rodar o projeto
+
+1. **Clone o repositório**
+2. **Instale as dependências**
+   ```bash
+   npm install
+   ```
+3. **Configure o arquivo `.env`** com sua string de conexão do MongoDB e outras variáveis.
+4. **Inicie o servidor**
+   ```bash
+   npm run dev
+   ```
+   O servidor estará disponível em `http://localhost:3000`.
+
+## Rotas principais
+
+- `POST /api/register` — Cadastro de usuário
+- `POST /api/login` — Login de usuário
+- `POST /api/recipes` — Criar receita (autenticado)
+- `GET /api/recipes` — Listar receitas aprovadas
+- `GET /api/admin/pending-recipes` — Listar receitas pendentes (admin)
+- `PATCH /api/admin/approve-recipe/:id` — Aprovar receita (admin)
+- `GET /api/admin/users` — Listar usuários (admin)
+
+## Observações
+
+- Use autenticação JWT para acessar rotas protegidas.
+- Apenas administradores podem aprovar receitas e acessar rotas de administração.
+- As senhas dos usuários são armazenadas de forma segura usando hash.
+
+---
+
+Sinta-se à vontade para contribuir ou sugerir melhorias!

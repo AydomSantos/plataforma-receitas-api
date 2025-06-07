@@ -1,4 +1,4 @@
-const Recipe = require('../models/recipeModel');
+const Recipe = require('../models/Recipe');
 
 // Cria uma nova receita
 exports.createRecipe = async (req, res) => {

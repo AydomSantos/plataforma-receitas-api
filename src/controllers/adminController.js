@@ -1,5 +1,5 @@
-const Recipe = require('../models/recipeModel');
-const User = require('../models/userModel');
+const Recipe = require('../models/Recipe');
+const User = require('../models/User');
 
 // Listar todas as receitas pendentes
 exports.getPendingRecipes = async (req, res) => {
